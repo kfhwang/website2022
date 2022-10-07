@@ -1,24 +1,105 @@
 body {
     width: 800px;
-    background: #bd001f url('../images/body_bg.gif') repeat-x top;
+    /* background: #bd001f url('../images/body_bg.gif') repeat-x top; */
+    background-image: linear-gradient(#f00, #ff0 );
     font-family: Microsoft JhengHei;
-    font-size: 1em;
+    font-size: 16px;
     color: #333;
     margin: 0px auto;
-    margin-top: 50px;
-    padding: 50px;
+    margin-top: 10px;
+    padding: 10px;
 }
-
+ 
 ul {
     list-style-type: none;
 }
 
+h1{
+    font-size: 2em;
+    margin: 5px 10px;
+}
+
 #nav {
     float: right;
+    padding-top: 30px;
 }
 
 #nav li {
     display: inline;
-    margin: 0;
+    margin: 0 0 0 20px;
     color: #fff;
 }
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+ 
+a:hover{
+    color: #bd001f;
+}
+
+a:visited{
+    color:black;
+}
+
+header, #masthead{
+    margin: 0 auto;
+    margin-top: 10px;
+    width: 800px;
+}
+
+#mainContent{
+    width: 800px;
+    background: #fff;
+    border: 10px solid #5c0505;
+    margin-top: 10px;
+}
+
+#mainContent img{
+    width: 100%;
+}
+
+#mainContent h2{
+    font-size: 1.2em;
+}
+
+#content{
+   width: 360px;
+   margin: 10px 0px;
+   padding: 10px;
+   float: right;
+}
+
+#content ul{
+    list-style:disc;
+}
+#content li a{
+    color: #bd001f;
+}
+#sidebar{
+    width: 400px;
+    margin: 10px 0px;
+    padding: 10px;
+    float: left;
+}
+
+#port ul{
+    list-style-type: none;
+}
+
+#port li{
+    display: inline;
+    margin: 0 10px 20px 0;
+    float: left;
+    border: 5px solid #ddd;
+    
+}
+
+footer{
+    background: #ddd;
+    text-align: center;
+    clear:both;
+    padding: 10px;
+}
+
