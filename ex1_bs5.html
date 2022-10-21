@@ -16,51 +16,127 @@
 
 <body>
 
-    <header id="masthead" class="container">
+    <div id="masthead" class="container">
         <img class="float-start" src="images\rl_logo.png" alt="">
-        <nav class="navbar navbar-expand-md float-end mt-4">
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span class="bi bi-x-diamond "></span></button>
+        <nav class="navbar navbar-expand-sm float-end mt-4">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu"><span
+                    class="bi bi-x-diamond "></span></button>
             <div id="menu" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link text-white" href="ex1.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="#content">Services</a></li>
-                    <li class="nav-item"><a class="nav-link text-white" href="portfolio.html" target="_blank">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link text-white" href="portfolio.html"
+                            target="_blank">Portfolio</a></li>
                     <li class="nav-item"><a class="nav-link text-white" href="contact.html">Contact</a></li>
                 </ul>
             </div>
         </nav>
-    </header>
-    <article id="mainContent" class="container">
-        <section id="titleBar">
-            <img class="w-100" src="images/tokyo.jpg" alt="Tokyo building">
+    </div>
+
+
+    <div id="mainContent" class="container">
+        <div id="titleBar">
+            <div id="titleSlider" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#titleSlider" data-bs-slide-to="0" class="active"></button>
+                    <button type="button" data-bs-target="#titleSlider" data-bs-slide-to="1"></button>
+                    <button type="button" data-bs-target="#titleSlider" data-bs-slide-to="2"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="w-100" src="images/header.jpg" alt="Tokyo building">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100" src="images/header2.jpg" alt="Tokyo building">
+                    </div>
+                    <div class="carousel-item">
+                        <img class="w-100" src="images/header3.jpg" alt="Tokyo building">
+                    </div>
+                </div>
+                <!-- Left and right controls/icons -->
+                <button class="carousel-control-prev mt-3" type="button" data-bs-target="#titleSlider" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#titleSlider" data-bs-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </button>
+            </div>
             <h1>Red Lantern </h1>
-        </section>
-        <section id="content">
-            <h2>Welcome to the new Red Lantern Design</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, quidem. Optio corrupti veniam cum,
-                reprehenderit architecto consequuntur in distinctio fugiat ipsam, repudiandae consequatur! Quisquam,
-                temporibus nam ex consectetur tempore sunt?</p>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repellat pariatur rerum. Saepe illum,
-                eaque, earum eveniet temporibus aspernatur doloremque ullam voluptatum excepturi, quas delectus est.
-                Quidem saepe vero placeat!</p>
-            <ul>
-                <li><a href="#titleBar">View our full portfolio</a></li>
-                <li><a href="contact.html">Contact Red Lantern</a></li>
-            </ul>
-        </section>
-        <section id="sidebar">
-            <h2>Our Work 紅燈籠</h2>
-            <ul id="port">
-                <li><img src="images/markinjapan.jpg" width="200px" alt=""></li>
-                <li><img src="images/a2g.jpg" alt=""></li>
-                <li><img src="images/foobar.jpg" alt=""></li>
-                <li><img src="images/rpm.jpg" alt=""></li>
-            </ul>
-        </section>
+        </div>
+        <div class="row">
+            <section id="content" class="col-md-6 col-12">
+                <h2>Welcome to the new Red Lantern Design</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corrupti, quidem. Optio corrupti veniam
+                    cum,
+                    reprehenderit architecto consequuntur in distinctio fugiat ipsam, repudiandae consequatur! Quisquam,
+                    temporibus nam ex consectetur tempore sunt?</p>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Alias repellat pariatur rerum. Saepe illum,
+                    eaque, earum eveniet temporibus aspernatur doloremque ullam voluptatum excepturi, quas delectus est.
+                    Quidem saepe vero placeat!</p>
+                <ul>
+                    <li><button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                            data-bs-target="#myModal">View our full portfolio</button></li>
+                    <li><button type="button" class="btn btn-primary" data-bs-toggle="offcanvas"
+                            data-bs-target="#myCanvas">Contact Red Lantern</button></li>
+                </ul>
+            </section>
+            <section id="sidebar" class="col-md-6 col-12">
+                <h2>Our Work 紅燈籠</h2>
+
+                <div id="port" class="row p-2 ">
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="w-100" src="images/markinjapan.jpg"></div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="w-100" src="images/a2g.jpg" alt=""></div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="w-100" src="images/foobar.jpg" alt=""></div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="w-100" src="images/rpm.jpg" alt=""></div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="img-fluid" src="images/escape.png" alt="">
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-12 mb-3"><img class="img-fluid" src="images/treehouse.png" alt="">
+                    </div>
+                </div>
+            </section>
+        </div>
         <footer>
             <p>Copyright &copy; Red Lantern Design, all right reserved.</p>
         </footer>
-    </article>
+    </div>
+
+
+    <!-- The Modal -->
+    <div class="modal" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+
+                <!-- Modal div -->
+                <div class="modal-div">
+                    <h4 class="modal-title">Modal Heading</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    Modal body..
+                </div>
+
+                <!-- Modal footer -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- Offcanvas Sidebar -->
+    <div class="offcanvas offcanvas-start" id="myCanvas">
+        <div class="offcanvas-div">
+            <h1 class="offcanvas-title">Heading</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <p>Some text lorem ipsum.</p>
+            <p>Some text lorem ipsum.</p>
+            <button class="btn btn-secondary" type="button">A Button</button>
+        </div>
+    </div>
 </body>
 
 </html>
