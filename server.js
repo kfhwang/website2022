@@ -8,6 +8,17 @@ server.use(express.static("Bootstrap_Exercise2"));//web root
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
 
+var DB = require("nedb-promises");
+var ContactDB = DB.create("contact.db");
+var PortfolioDB = DB.create("portfolio.db");
+// PortfolioDB.insert([
+//     { href: "#portfolioModal1", imgSrc: "img/portfolio/roundicons.png", title: "Round Icons", text: "Graphic Design" },
+//     { href: "#portfolioModal2", imgSrc: "img/portfolio/startup-framework.png", title: "Startup Framework", text: "Website Design" },
+//     { href: "#portfolioModal3", imgSrc: "img/portfolio/treehouse.png", title: "Treehouse", text: "Website Design" },
+//     { href: "#portfolioModal1", imgSrc: "img/portfolio/roundicons.png", title: "Round Icons", text: "Graphic Design" },
+//     { href: "#portfolioModal2", imgSrc: "img/portfolio/startup-framework.png", title: "Startup Framework", text: "Website Design" },
+//     { href: "#portfolioModal3", imgSrc: "img/portfolio/treehouse.png", title: "Treehouse", text: "Website Design" }
+// ])
 server.get("/service", function(req, res){
 
     Services = [
@@ -20,15 +31,14 @@ server.get("/service", function(req, res){
 
 server.get("/portfolio", function(req, res){
     
-    portfolios= [
-        { href: "#portfolioModal1", imgSrc: "img/portfolio/roundicons.png", title: "Round Icons", text: "Graphic Design" },
-        { href: "#portfolioModal2", imgSrc: "img/portfolio/startup-framework.png", title: "Startup Framework", text: "Website Design" },
-        { href: "#portfolioModal3", imgSrc: "img/portfolio/treehouse.png", title: "Treehouse", text: "Website Design" },
-        { href: "#portfolioModal1", imgSrc: "img/portfolio/roundicons.png", title: "Round Icons", text: "Graphic Design" },
-        { href: "#portfolioModal2", imgSrc: "img/portfolio/startup-framework.png", title: "Startup Framework", text: "Website Design" },
-        { href: "#portfolioModal3", imgSrc: "img/portfolio/treehouse.png", title: "Treehouse", text: "Website Design" }
-    ]
-   res.send(portfolios);
+    PortfolioDB.find({}).then(results => {
+        if(results !=null){
+            res.send(results);
+        }else{
+            res.send("Error!")
+        }
+    }) 
+    
 })
 
 
@@ -40,10 +50,12 @@ server.get("/contact", function(req, res){
  
 server.post("/contact", function(req, res){
     console.log(req.body);
-    res.redirect("/BS5_Ex2 Vue.html");
+    ContactDB.insert(req.body);
+    res.send();
+    //res.redirect("/index.html");
 })
 
 
 server.listen(8000, function(){
-    console.log("Server is running at port 8080!")
+    console.log("Server is running at port 8000!")
 })
