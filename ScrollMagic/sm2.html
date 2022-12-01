@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScrollMagic #1 pin</title>
+    <!-- <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.14.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/debug.addIndicators.js"></script>
+</head>
+</head>
+<style>
+    html,
+    body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #container {
+        margin: 55vh 0;
+        padding: 10px;
+        background: #333 url("img/map-image.png");
+        outline: 1px dashed orange;
+        color: #fff;
+    }
+
+    #block {
+        padding: 10px;
+
+        border: 1px solid black;
+
+        font-family: Helvetica;
+    }
+</style>
+
+<body>
+    <div id="container">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit facilis iusto dolorem beatae quasi, dolorum
+            dolor quas delectus dicta? Nisi libero corporis dolores quae. Error modi ipsam distinctio facere. Placeat!
+        </p>
+        <div id="block">
+            <img src="img/header-bg.jpg" width="100%">
+        </div>
+
+    </div>
+</body>
+
+<script>
+    $(function () {
+        var controller = new ScrollMagic.Controller();
+        var blockTween = new TweenMax.to('#block', 1, {
+            backgroundColor: 'red',
+            scale: 0.8
+        });
+        var containerScene = new ScrollMagic.Scene({
+            triggerElement: '#container',
+            offset: 50,  //trigger after 50px from start
+            duration: 200 //distance: from start to end 
+        })
+        .setTween(blockTween).setPin('#block')
+        .addIndicators()
+        .addTo(controller);
+
+
+    });
+</script>
+
+</html>
