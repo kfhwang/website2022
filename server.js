@@ -3,7 +3,7 @@ var bodyParser = require("body-parser");
 
 server = express();
 
-server.use(express.static("Bootstrap_Exercise2"));//web root
+server.use(express.static("ScrollMagic"));//web root
 //server.use(express.static("md110"));//web root
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
