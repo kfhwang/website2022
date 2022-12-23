@@ -31,8 +31,7 @@ server.set("view engine", "ejs");
 server.set("views", __dirname+"/views");
 
 server.post("/add", function(req, res){
-     var form = new formidable.IncomingForm();
-     form.maxFileSize = 200*1024;
+     var form = new formidable.IncomingForm({maxFileSize: 200*1024});
      form.parse(req, function(err, fields, files){
         if(err){
             res.render("error", {error: err.message, next:"/index.html"});
