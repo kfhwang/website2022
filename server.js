@@ -2,8 +2,9 @@ var express = require("express");
 var bodyParser = require("body-parser");
 
 server = express();
+var fs = require("fs");
 
-server.use(express.static("ScrollMagic"));//web root
+server.use(express.static("Upload"));//web root
 //server.use(express.static("md110"));//web root
 server.use(bodyParser.urlencoded());
 server.use(bodyParser.json());
@@ -19,6 +20,48 @@ var PortfolioDB = DB.create("portfolio.db");
 //     { href: "#portfolioModal2", imgSrc: "img/portfolio/startup-framework.png", title: "Startup Framework", text: "Website Design" },
 //     { href: "#portfolioModal3", imgSrc: "img/portfolio/treehouse.png", title: "Treehouse", text: "Website Design" }
 // ])
+var Games = DB.create("game.db");
+Games.ensureIndex({fieldName:"id", unique:true});
+
+//for upload
+var formidable = require("formidable");
+var probe = require("probe-image-size");
+//var sharp=
+server.set("view engine", "ejs");
+server.set("views", __dirname+"/views");
+
+server.post("/add", function(req, res){
+     var form = new formidable.IncomingForm();
+     form.maxFileSize = 200*1024;
+     form.parse(req, function(err, fields, files){
+        if(err){
+            res.render("error", {error: err.message, next:"/index.html"});
+        }else{
+            var newGame = fields;
+            newGame.players = parseInt(newGame.players);
+            var ext = files.poster.originalFilename.split(".")[1];
+            newGame.poster = fields.id+"."+ext;
+            var posterPath = "Upload/files/"+newGame.poster;
+
+            //check image size
+            var input = fs.createReadStream(files.poster.filepath);
+            probe(input).then(result=>{
+                if(result.width == 800 && result.height==400){
+                    //insert to DB
+                    Games.update({id: newGame.id}, newGame, {upsert:true}).then(doc=>{
+
+                    })
+                    //move to upload/files
+                    fs.renameSync(files.poster.filepath, posterPath);
+                    res.render("success", {msg:"Uploaded succeful!", next:"/index.html"});
+                }else{
+                    res.render("error", {error: "Image sizes are not 800x400", next:"/index.html"});
+                }
+            })
+        }
+     })
+})
+
 server.get("/service", function(req, res){
 
     Services = [

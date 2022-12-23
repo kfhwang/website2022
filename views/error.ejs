@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Error!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            overflow: hidden;
+            padding: 0;
+        }
+        .carousel-caption {
+            top: 0;
+            bottom: auto;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div><h2 style="text-align:center;line-height: 2;"> Error!</h2> </div>
+
+    <div class="container-fluid">
+        
+        <div class="alert alert-danger" role="alert">
+          <%= error %>
+        </div>
+        <% if(next){%>
+            <a href="<%= next %>" class="btn btn-primary btn-lg active float-right" role="button" aria-pressed="true">Next</a>
+        <% } %>
+    </div>
+   
+</body>
+
+
+</html>

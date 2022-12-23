@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit data by form</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+  
+  body{
+	  font-family: Microsoft JhengHei;
+  }
+  form{
+    width:50%;
+    background-color:rgba(250,180,66,0.8);
+    padding:15px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 7px rgba(100, 100, 100, 0.5);
+  }
+</style>
+<body>
+ 
+<div class="container">
+  
+  <h2>遊戲基本資料</h2>
+  <form method="post"  action="/add" encType="multipart/form-data">
+    Game's name: <input  class="form-control"  type="text" name="gameName" placeholder="遊戲名稱" maxlength="10" required> <br>
+    ID: <select class="form-control" name="id" id="id">
+    <option value="" selected disabled hidden>Choose your ID</option>
+    <option value="s1310934012">1310934012 陳喬蓉</option>	
+    <option value="s1310934032">1310934032 林明德</option>	
+    <option value="s1310934043">1310934043 蘇鑫盛</option>	
+    <option value="s1310934044">1310934044 蘇鑫憲</option>	
+    <option value="s1410552010">1410552010 林知嫻</option>	
+    <option value="s1410552046">1410552046 簡瑜亭</option>	
+    <option value="s1410622022">1410622022 黃惠君</option>	
+    <option value="s1410622046">1410622046 鄭明仁</option>	
+    <option value="s1410622048">1410622048 周泳衡</option>	
+    <option value="s1410623034">1410623034 劉彥慈</option>	
+    <option value="s1410652037">1410652037 黃穎恆</option>	
+    <option value="s1410722001">1410722001 吳姵諠</option>	
+    <option value="s1410722002">1410722002 施心雅</option>	
+    <option value="s1410722003">1410722003 徐皎筑</option>	
+    <option value="s1410722004">1410722004 蕭泓琳</option>	
+    <option value="s1410722005">1410722005 謝孟娟</option>	
+    <option value="s1410722006">1410722006 夏護華</option>	
+    <option value="s1410722007">1410722007 王秋雯</option>	
+    <option value="s1410722008">1410722008 田御旻</option>	
+    <option value="s1410722009">1410722009 吳語涵</option>	
+    <option value="s1410722010">1410722010 李依馨</option>	
+    <option value="s1410722011">1410722011 沈潔伶</option>	
+    <option value="s1410722012">1410722012 林郁婷</option>	
+    <option value="s1410722013">1410722013 邱郁婷</option>	
+    <option value="s1410722014">1410722014 邱鈺淳</option>	
+    <option value="s1410722015">1410722015 張亞瑄</option>	
+    <option value="s1410722017">1410722017 張雅潔</option>	
+    <option value="s1410722018">1410722018 黃紫晏</option>	
+    <option value="s1410722019">1410722019 黃鈺晴</option>	
+    <option value="s1410722020">1410722020 楊采妮</option>	
+    <option value="s1410722021">1410722021 李孟珊</option>	
+    <option value="s1410722022">1410722022 劉靖琳</option>	
+    <option value="s1410722023">1410722023 况映彤</option>	
+    <option value="s1410722024">1410722024 林品萱</option>	
+    <option value="s1410722025">1410722025 柯佳伶</option>	
+    <option value="s1410722026">1410722026 曾郁文</option>	
+    <option value="s1410722027">1410722027 黃新茹</option>	
+    <option value="s1410722028">1410722028 蔡芳妮</option>	
+    <option value="s1410722029">1410722029 賴妤甄</option>	
+    <option value="s1410722030">1410722030 施煌祥</option>	
+    <option value="s1410722031">1410722031 陳郁翔</option>	
+    <option value="s1410722032">1410722032 楊高明</option>	
+    <option value="s1410722033">1410722033 李奕䫆</option>	
+    <option value="s1410722034">1410722034 王鴻逸</option>	
+    <option value="s1410722036">1410722036 李詒斐</option>	
+    <option value="s1410722037">1410722037 林冠瑋</option>	
+    <option value="s1410722038">1410722038 林錦</option>	
+    <option value="s1410722039">1410722039 邱傳恩</option>	
+    <option value="s1410722041">1410722041 張喬軒</option>	
+    <option value="s1410722043">1410722043 陳嘉晉</option>	
+    <option value="s1410722044">1410722044 曾晨僥</option>	
+    <option value="s1410722045">1410722045 楊孟錠</option>	
+    <option value="s1410722047">1410722047 王瑋翔</option>	
+    <option value="s1410722048">1410722048 李柏諺</option>	
+    <option value="s1410722049">1410722049 陳宏治</option>	
+    <option value="s1410722050">1410722050 陳郁翔</option>	
+    <option value="s1410722051">1410722051 黃亭喬</option>	
+    <option value="s1410722053">1410722053 魏鈺晉</option>	
+    <option value="s1410722054">1410722054 林良福</option>	
+    <option value="s1410722055">1410722055 陳金龍</option>	
+    <option value="s1410722056">1410722056 陳俊洋</option>
+    </select>
+    Author: <input class="form-control" type="text" name="author" id="author" placeholder="創作者" readonly><br>
+    Players: <input class="form-control" type="number" name="players" value="1" required><br>
+    Text Color:<input class="form-control" type="color" name="color" placeholder="文字顏色" value="#FFFFFF"><br>
+    Poster (800x400 px, Maximum 200Kb): <input class="form-control-file" type="file" name="poster" required><br>
+    Game file (.zip): Please upload it when this game data created successfully.<br><br> 
+    <input class="btn btn-danger" type="submit" value="Submit">
+  </form>
+</div>
+</body>
+<script>
+  $(function(){
+    $("#id").change(function(){
+      var idx=this.selectedIndex+1;
+      var selected = $("#id option:nth-child("+idx+")").html();
+      var name=selected.split(' ')[1];
+      //console.log(name);
+      $("#author").val(name);
+    })
+    
+  })
+</script>
+
+</html>
