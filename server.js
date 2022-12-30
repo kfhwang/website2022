@@ -52,7 +52,7 @@ server.post("/add", function(req, res){
                     })
                     //move to upload/files
                     fs.renameSync(files.poster.filepath, posterPath);
-                    res.render("success", {msg:"Uploaded succeful!", next:"/index.html"});
+                    res.render("success", {msg:"Uploaded succeful!", next:"/index.html", img:"files/"+newGame.poster});
                 }else{
                     res.render("error", {error: "Image sizes are not 800x400", next:"/index.html"});
                 }
